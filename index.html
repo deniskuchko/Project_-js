@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main page</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <header id="header">
+        <div class="logo_menu">
+            <a href="#" class="logo">Fashion</a>
+            <ul>
+                <li><a href="./index.html" onclick="toogle()">Home</a></li>
+                <li><a href="./catalog.html" onclick="toogle()">Catalog</a></li>               
+                <li><a href="./myAccaunt/myAccaunt.html" onclick="toogle()">My Account</a></li>                
+                <li><a href="#sales" onclick="toogle()">Sales</a></li>
+                <li><a href="#company" onclick="toogle()"> About Us</a></li>
+                <li><a href="#contact" onclick="toogle()">Contact</a></li>
+            </ul>
+        <div class="toogle" onclick="toogle()"></div>
+        </div>
+        
+        <div class="search-box">
+            <input class="search-txt" type="text" name="" placeholder="Search">
+            <a class="search-basket"href="#"><i class="fas fa-shopping-basket"></i></a>
+            <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
+                
+        </div>
+        <!-- Создание chat кнопки -->
+        <div id="chatbox" class="chatbox"> 
+            <button class="open_button">Chat</button>
+            <div class="chat_popup" id="myform">
+                <form action="" class="form_container">
+                    <h1>Chat</h1>
+                    <label for="msg"><b>Message</b></label>
+                    <textarea placeholder="Type number here..." name="msg" required></textarea>
+                    <button type="submit" class="btn_chat">Send</button>
+                    <button type="button" class="btn_chat cancel">Close</button>
+                </form>
+            </div>
+        </div>
+    </header>
+    
+
+
+    <section class="banner" id="home">
+        <div id="button_previw">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+        <h2>Fashion <br><span>is our </span>profession</h2>
+        <div id="button_next">
+            <i class="fas fa-arrow-right"></i>
+        </div>
+        <div class="carusel">
+            <i class="fas fa-grip-lines button_previw"></i>
+            <i class="fas fa-grip-lines button_next"></i>
+        </div>
+
+
+         
+
+    </section>
+    
+    <section class="sec work" id="sales">
+        <div class="content">
+            <div class="mxw800p">
+                <h3>Sales</h3>
+                <p>
+                    Manage to buy
+                </p>
+            </div>
+            <div class="sales" >
+                <div class="arrow_sales">
+                    <button class="button_before "><i class="fas fa-arrow-left"></i></button>
+
+                    <button class="button "><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+    <section class="sec" id="catalog">
+        <div class="content">
+            <div class="mxw800p">
+                <h3>Advantages of our company</h3>
+                    <a href="#" class="btn">Look here</a>
+            </div>
+            
+            <div class="main">
+                <div class="container container--1">
+                    <p>Какой-то текст в три колонки</p>
+                </div>
+                <div class="container container--1">
+                    <p>Какой-то текст в три колонки</p>
+                </div>
+                <div class="container container--1">
+                    <p>Какой-то текст в три колонки</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <section class="sec work" id="company">
+        <div class="content">
+            <div class="mxw800p">
+                <h3>About Our Company</h3>
+                <p>
+                    wefqwqwfqwefqwefwefqef
+                </p>
+            </div>
+            <div class="teamBx">
+                <div class="member">
+                    <div class="imgBx">
+                        <img src="./img/Blog1.png" >
+                    </div>
+                    <div class="details">
+                        <div>
+                            <h2>Some <span>Headline</span> Here</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="member">
+                    <div class="imgBx">
+                        <img src="./img/Blog2.png" >
+                    </div>
+                    <div class="details">
+                        <div>
+                            <h2>Some <span>Headline</span> Here</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="member">
+                    <div class="imgBx">
+                        <img src="./img/Blog3.png" >
+                    </div>
+                    <div class="details">
+                        <div>
+                            <h2>Some <span>Headline</span> Here</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec contact" id="contact">
+        <div class="content">
+            <div class="mxw800p">
+                <h3>Send Us A Message</h3>
+            </div>
+            <div class="contactForm">
+                <form>
+                    <div class="row100">
+                        <div class="inputBx50">
+                            <input type="text" name="" placeholder="Full Name">
+                        </div>
+                        <div class="inputBx50">
+                            <input type="text" name="" placeholder="Email Address">
+                        </div>
+                    </div>
+                    <div class="row100">
+                        <div class="inputBx100">
+                            <textarea placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="row100">
+                        <div class="inputBx100">
+                            <input type="submit" name="" value="Send">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="footer">
+                <div id="container_1">
+                    <h4>Shop</h4>
+                   
+                </div>
+                <div id="container_2">
+                    <h4>Information</h4>
+                    
+                </div>
+                <div id="container_3">
+                    <h4>Customer Service</h4>
+                    
+                </div>
+            </div>
+            <div class="sci">
+                <ul>
+                    <li>
+                        <a href="#"> <img src="./img/social/facebook.png" alt=""></a>
+                        <a href="#"> <img src="./img/social/inst.png" alt=""></a>
+                        <a href="#"> <img src="./img/social/telegram.png" alt=""></a>
+                        <a href="#"> <img src="./img/social/twitter.png" alt=""></a>
+
+                    </li>
+                </ul>
+            </div>
+            <p class="copyright">Design & Developed By <a href="#">Denis Kuchko</a></p>
+        </div>
+    </section>
+    
+    <script src="./chatbox.js"></script>
+    <script src="./ourBrands.js"></script>
+    <script src="./salesProducts.js"></script>
+    <script src="./salesScript.js"></script>
+    <script src="./footer.js"></script>
+    <script src="./footer_script.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

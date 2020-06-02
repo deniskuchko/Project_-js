@@ -1,0 +1,112 @@
+.containr_products{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+.containr_products .item{
+    background-color: #e8f5f8;
+    width: 250px;
+    border: 2px solid gray;
+    border-radius: 20px;
+    height: 300px;
+    text-align: center;
+}
+.containr_products .image{
+    background-image: url('./img/grusha.png');
+    height: 200px;
+    background-size: cover;
+    border-radius: 10px;
+    background-size: cover;
+}
+.containr_products .image:hover{
+    background-position-y: center;
+    transition: 0.8s;
+    transform: scale(0.8);
+}
+.containr_products i{
+
+    width: 19px;
+    height: 20px;;
+}
+.last{
+position: absolute;
+    top: -42px;
+}
+#sidebar{
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background-color: #57626F;
+    border-right: 4px solid #E0E5EA;
+    left: -250px;
+    -moz-transition: all 600ms;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
+    z-index: 1000;
+
+}
+#sidebar.active{
+    left: 0px;
+}
+
+#sidebar ul{
+    text-align: left;
+}
+#sidebar ul li:first-child{
+    text-align: center;
+    color: white;
+    font-size: 1.95em;
+    list-style: none;
+    padding: 25px 10px 10px 10px;
+}
+#sidebar ul li:not(:first-child){
+    width: 90%;
+    margin-left: 10%;
+    font-size: 1.1em;
+    list-style: none;
+    padding: 15px 10px;
+}
+#sidebar ul li button{
+    color: #dfe5ed;
+    border: none;
+    background: none;
+    outline: none;
+}
+#sidebar ul li button:hover{
+    color: #59e9df;
+}
+
+#ul_catalog li ol{
+    display: none;
+}
+
+#sidebar .toogle_btn{
+    position: absolute;
+    left: 255px;  
+    background: #e0e5ea;
+    padding: 8px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+#sidebar .toogle_btn:hover{
+    background: #556270;
+}
+#sidebar .toogle_btn:hover span{
+    background: #fafafa;
+}
+#sidebar .toogle_btn span{
+    display: block;
+    width: 25px;
+    height: 4px;
+    background-color: #666;
+    margin: 4px 0;
+}
+
+
+
+#containr_products, .item .image {
+    transition:  600ms;
+}
+
+

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Accaunt</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./myAccaunt.css">
+</head>
+<body>
+    <header id="header">
+        <div class="logo_menu">
+            <a href="#" class="logo">Fashion</a>
+            <ul>
+                <li><a href="../index.html" onclick="toogle()">Home</a></li>
+                <li><a href="../catalog.html" onclick="toogle()">Catalog</a></li>               
+                <li><a href="./myAccaunt.html" onclick="toogle()">My Account</a></li>                
+                <li><a href="#sales" onclick="toogle()">Sales</a></li>
+                <li><a href="#company" onclick="toogle()"> About Our Company</a></li>
+                <li><a href="#contact" onclick="toogle()">Contact</a></li>
+            </ul>
+        <div class="toogle" onclick="toogle()"></div>
+        </div>
+        
+        <div class="search-box">
+            <input class="search-txt" type="text" name="" placeholder="Search">
+            <a class="search-basket"href="#"><i class="fas fa-shopping-basket"></i></a>
+            <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
+                
+        </div>
+        <!-- Создание chat кнопки -->
+        <div id="chatbox" class="chatbox"> 
+            <button class="open_button">Chat</button>
+            <div class="chat_popup" id="myform">
+                <form action="" class="form_container">
+                    <h1>Chat</h1>
+                    <label for="msg"><b>Message</b></label>
+                    <textarea placeholder="Type number here..." name="msg" required></textarea>
+                    <button type="submit" class="btn_chat">Send</button>
+                    <button type="button" class="btn_chat cancel">Close</button>
+                </form>
+            </div>
+        </div>
+    </header>
+        <!-- Создание окна ввода пароля -->
+
+    <section class="sec work" id="catalog">
+        <div class="content">
+            <div class="mxw800p">
+                <h3>My Accaunt</h3>
+            </div>
+            <!-- Ввести пароль илогин -->
+            <div class="form_accaunt">
+                <h4>Enter</h1>
+                <div class="input_form">
+                    <input type="text" id="login" placeholder="Login">
+                </div>
+                <div class="input_form">
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+                <div class="input_form">
+                    <input type="submit"  id="vvod_dannix" placeholder="Enter">
+                </div>
+                <div>
+                    <a href="#">Autorisation</a> <p>/</p>
+                    <a href="#">Forgot the password?</a>
+                </div>
+            </div>
+            <!-- Сама страница пользователя -->
+            <div class="client_page">
+                <div class="left">
+                    <img src="../img/Blog1.png" alt="user" width="100">
+                    <h4>Alexa</h4>
+                </div>
+                <div class="right">
+                    <div class="info">
+                        <h3>Information</h3>
+                        <div class="info_data">
+                            <div class="data">
+                                <h4>Email</h4>
+                                <p>alexa@mail.ru</p>
+                            </div>
+                            <div class="data">
+                                <h4>Phone</h4>
+                                <p>(00)000-00-00</p>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="projects">
+                        <h3>My Orders</h3>
+                        <div class="projects_data">
+                            <div class="data">
+                                <h4>Recent</h4>
+                                <p>Lorem</p>
+                            </div>
+                            <div class="data">
+                                <h4>Most View</h4>
+                                <p>asdcasd</p>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec contact" id="contact">
+        <div class="content">
+            <div class="mxw800p">
+                <h3>Send Us A Message</h3>
+            </div>
+            <div class="contactForm">
+                <form>
+                    <div class="row100">
+                        <div class="inputBx50">
+                            <input type="text" name="" placeholder="Full Name">
+                        </div>
+                        <div class="inputBx50">
+                            <input type="text" name="" placeholder="Email Address">
+                        </div>
+                    </div>
+                    <div class="row100">
+                        <div class="inputBx100">
+                            <textarea placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="row100">
+                        <div class="inputBx100">
+                            <input type="submit" name="" value="Send">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="footer">
+                <div id="container_1">
+                    <h4>Shop</h4>
+                   
+                </div>
+                <div id="container_2">
+                    <h4>Information</h4>
+                    
+                </div>
+                <div id="container_3">
+                    <h4>Customer Service</h4>
+                    
+                </div>
+            </div>
+            <div class="sci">
+                <ul>
+                    <li>
+                        <a href="#"> <img src="../img/social/facebook.png" alt=""></a>
+                        <a href="#"> <img src="../img/social/inst.png" alt=""></a>
+                        <a href="#"> <img src="../img/social/telegram.png" alt=""></a>
+                        <a href="#"> <img src="../img/social/twitter.png" alt=""></a>
+
+                    </li>
+                </ul>
+            </div>
+            <p class="copyright">Design & Developed By <a href="#">Denis Kuchko</a></p>
+        </div>
+    </section>
+    
+    <script src="../chatbox.js"></script>
+    <script src="../footer.js"></script>
+    <script src="../footer_script.js"></script>
+    <script src="../script.js"></script>
+    <script src="./users.js"></script>
+    <script src="./myAccaunt.js"></script>
+</body>
+</html>

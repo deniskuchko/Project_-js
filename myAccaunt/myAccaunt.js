@@ -1,3 +1,4 @@
+/* Проверка логина и пароля */
 function passwordTrue(){
     login = document.getElementById('login').value;
     password = document.getElementById('password').value;
@@ -22,9 +23,16 @@ function passwordTrue(){
         
     }
 };
-
+/* Открытие страницы пользователя */
 function myPage(){
     document.querySelector('.form_accaunt').style.display = 'none';
     document.querySelector('.client_page').style.display = 'flex';
 };
 document.getElementById('vvod_dannix').addEventListener('click',passwordTrue);
+
+/* открытие страницы Авторизации */
+function autorisationPage(){
+    document.querySelector('.form_accaunt').style.display = 'none';
+    document.querySelector('.form_autorisation').style.display = 'block';
+};
+document.getElementById('autorisation').addEventListener('click',autorisationPage);

@@ -1,25 +1,26 @@
-.form_accaunt{    
+.form_accaunt, .form_autorisation{    
     background: rgba(0,0,0,.2);
     max-width: 400px;
     margin: 0 auto;
     border-radius: 10px;
     text-align: center;
 }
-.form_accaunt:hover{    
+.form_accaunt:hover, .form_autorisation:hover{    
     background: rgba(0,0,0,.8);
     transition: .6s;
     
 }
-.form_accaunt:hover h4 , .form_accaunt:hover .input_form input[type="submit"]{    
+.form_accaunt:hover h4 , .form_accaunt:hover .input_form input[type="submit"],
+.form_autorisation:hover h4 , .form_autorisation:hover .input_form input[type="submit"]{    
     color: #fff;
     transition: .6s;
 
 }
-.form_accaunt h4{
+.form_accaunt h4, .form_autorisation h4{
     margin: 30px 100px;
     padding: 0;
     color: #000;
-    font-size: 30px;
+    font-size: 24px;
     text-transform: uppercase;
     text-align: center;
     font-weight: 200;
@@ -33,7 +34,7 @@
     padding: 10px;
     width: 100%;
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
     background: none;
     outline: none;
     border: 1px solid #fff;
@@ -105,10 +106,9 @@
 .client_page .right{
     width: 65%;
     background: #fff;
-    padding: 30px 25px;
+    padding: 0px 25px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    padding: 30px 25px;
     text-align: left;
 }
 .client_page .right .info,
@@ -117,13 +117,18 @@
 }
 .client_page .right .info h3,
 .client_page .right .projects h3{
-    margin-bottom: 15px;
-    padding-bottom: 5px;
+    margin-bottom: 10px;
     border-bottom: 1px solid #e0e0e0;
     color: #353c4e;
     text-transform: uppercase;
     letter-spacing: 5px;
 }
 
+/* авторизыция */
+.form_autorisation{
+   display:  none;
+}
 
-
+.input_form input[type="submit"] {
+    margin-bottom: 20px;
+}

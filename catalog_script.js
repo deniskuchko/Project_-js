@@ -5,14 +5,28 @@ function openMenu(){
 document.querySelector('.toogle_btn').addEventListener('click', openMenu);
 /* Создание карточек продукции */
 class AllProducts{
-    constructor(containerProducts, catalogProducts){
+    constructor(containerProducts, catalogProducts, catalogCounter){
         this.containerProducts = document.querySelector(containerProducts);
         this.catalogProducts = catalogProducts;
+        this.catalogCounter = document.querySelector(catalogCounter);
         this.createProducts();
     };
     createProducts(){
         let wraper = document.createElement('slot');
+        let products = store.getProducts();
+        this.catalogCounter.innerHTML = products.length;
         for(let i = 0; i < this.catalogProducts.length; i++){
+
+            let index = products.indexOf(this.catalogProducts[i].id);
+            let activeText;
+
+            if(index === -1){
+                activeText = 'Добавить в корзину';
+            } else {
+                activeText = 'Удалить из корзины'
+            };
+
+
             let item  = this.getProductItem({
                 nameTag: 'div',
                 nameclass: 'item',
@@ -34,9 +48,23 @@ class AllProducts{
             });
             let btn = this.getProductItem({
                 nameTag: 'i',
-                nameclass: 'fas fa-shopping-basket'
-                
+                nameclass: 'fas fa-shopping-basket',
+                contentText: activeText,
+                id: this.catalogProducts[i].id
             });
+
+            btn.addEventListener('click', function(){
+                let id = this.getAttribute('id');
+                let result = store.putProduct(id);
+
+                womenProducts.catalogCounter.innerHTML = result.products.length;
+
+                if(result.statusProduct){
+                    this.innerHTML = 'Удалить из корзины';
+                } else {
+                    this.innerHTML = 'Добавить в корзину';
+                }
+            })
 
             item.appendChild(name);
             item.appendChild(img);
@@ -44,6 +72,7 @@ class AllProducts{
             item.appendChild(btn);
             wraper.appendChild(item);
         };
+
         this.containerProducts.appendChild(wraper);
     };
 
@@ -58,17 +87,20 @@ class AllProducts{
         if('bgImage' in card){
             element.style.backgroundImage = card.bgImage;
         };
+        if('id' in card){
+            element.setAttribute('id', card.id);
+        }
         return element;
     };
 }
 
 
-let womenProducts = new AllProducts('.containr_products', catalogWomen);
-let menProducts = new AllProducts('.containr_products', catalogMen);
-let shoesMen = new AllProducts('.containr_products', catalogShoesMen);
-let shoesWomen = new AllProducts('.containr_products', catalogShoesWomen);
-let accesories = new AllProducts('.containr_products', catalogAccesories);
-let bags = new AllProducts('.containr_products', catalogBags);
+let womenProducts = new AllProducts('.containr_products', catalogWomen, '.value_product');
+let menProducts = new AllProducts('.containr_products', catalogMen, '.value_product');
+let shoesMen = new AllProducts('.containr_products', catalogShoesMen, '.value_product');
+let shoesWomen = new AllProducts('.containr_products', catalogShoesWomen, '.value_product');
+let accesories = new AllProducts('.containr_products', catalogAccesories, '.value_product');
+let bags = new AllProducts('.containr_products', catalogBags, '.value_product');
 /* Сдвиг карточек при открытии списка Menu */
 
 let  containrProducts = document.querySelector('.containr_products');
@@ -94,7 +126,7 @@ document.getElementById('men').addEventListener('click', () =>{
     while (containrProducts.firstChild) {
         containrProducts.removeChild(containrProducts.firstChild);
     }
-    menProducts = new AllProducts('.containr_products', catalogMen);
+    menProducts = new AllProducts('.containr_products', catalogMen, '.value_product');
     
 });
 
@@ -102,50 +134,50 @@ document.getElementById('women').addEventListener('click', () =>{
     while (containrProducts.firstChild) {
         containrProducts.removeChild(containrProducts.firstChild);
     }
-    womenProducts = new AllProducts('.containr_products', catalogWomen);
+    womenProducts = new AllProducts('.containr_products', catalogWomen, '.value_product');
 });
 
 document.getElementById('shoesmen').addEventListener('click', () =>{
     while (containrProducts.firstChild) {
         containrProducts.removeChild(containrProducts.firstChild);
     }
-    shoesMen = new AllProducts('.containr_products', catalogShoesMen);
+    shoesMen = new AllProducts('.containr_products', catalogShoesMen, '.value_product');
 });
 document.getElementById('shoeswomen').addEventListener('click', () =>{
     while (containrProducts.firstChild) {
         containrProducts.removeChild(containrProducts.firstChild);
     }
-    shoesWomen = new AllProducts('.containr_products', catalogShoesWomen);
+    shoesWomen = new AllProducts('.containr_products', catalogShoesWomen, '.value_product');
 });
 
 document.getElementById('bags').addEventListener('click', () =>{
     while (containrProducts.firstChild) {
         containrProducts.removeChild(containrProducts.firstChild);
     }
-    bags = new AllProducts('.containr_products', catalogBags);
+    bags = new AllProducts('.containr_products', catalogBags, '.value_product');
 });
 document.getElementById('accesories').addEventListener('click', () =>{
     while (containrProducts.firstChild) {
         containrProducts.removeChild(containrProducts.firstChild);
     }
-    accesories = new AllProducts('.containr_products', catalogAccesories);
+    accesories = new AllProducts('.containr_products', catalogAccesories, '.value_product');
 });
 
 document.getElementById('all_products').addEventListener('click', () =>{
     while (containrProducts.firstChild) {
         containrProducts.removeChild(containrProducts.firstChild);
     }
-    womenProducts = new AllProducts('.containr_products', catalogWomen);
-    menProducts = new AllProducts('.containr_products', catalogMen);
-    shoesMen = new AllProducts('.containr_products', catalogShoesMen);
-    shoesWomen = new AllProducts('.containr_products', catalogShoesWomen);
-    accesories = new AllProducts('.containr_products', catalogAccesories);
-    bags = new AllProducts('.containr_products', catalogBags);
+    womenProducts = new AllProducts('.containr_products', catalogWomen, '.value_product');
+    menProducts = new AllProducts('.containr_products', catalogMen, '.value_product');
+    shoesMen = new AllProducts('.containr_products', catalogShoesMen, '.value_product');
+    shoesWomen = new AllProducts('.containr_products', catalogShoesWomen, '.value_product');
+    accesories = new AllProducts('.containr_products', catalogAccesories, '.value_product');
+    bags = new AllProducts('.containr_products', catalogBags, '.value_product');
 });
 
 /* filter  открытие вкладок*/
 
-document.getElementById('filter').addEventListener('click', () =>{
+function openFilter(){
     
     if(document.getElementById('price').style.display === 'none'){
         document.getElementById('price').style.display = 'block';
@@ -156,13 +188,26 @@ document.getElementById('filter').addEventListener('click', () =>{
         document.getElementById('name').style.display = 'none';
         
     }
-});
+};
+
+document.querySelector('#filter').onmouseover = openFilter;
 
 /* filter имени */
 
 function vvodName(){
     let nameFilter = document.querySelector('.name_filter').value;
+    const nameProducts = [];
+    while (containrProducts.firstChild) {
+        containrProducts.removeChild(containrProducts.firstChild);
+    }
 
-    console.log(nameFilter);
+    for(let i = 0; i < allOurProducts.length; i++){
+        if(nameFilter === allOurProducts[i].name){
+            nameProducts.push(allOurProducts[i]);
+        }
+        
+    }
+    let filterName = new AllProducts('.containr_products', nameProducts, '.value_product');
+    return filterName;
 };
 document.getElementById('search_name').addEventListener('click', vvodName);

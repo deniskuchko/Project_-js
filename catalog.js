@@ -1,30 +1,30 @@
 const catalogWomen = [
     {
-        id: '',
+        id: 'id1',
         name: 'Shirt ',
         img: './img/catalog/women/women1.png',
         price: 1000
     },
     {
-        id: '',
+        id: 'id2',
         name: 'Shirt ',
         img: './img/catalog/women/women2.png',
         price: 2000
     },
     {
-        id: '',
+        id: 'id3',
         name: 'Undershirt',
         img: './img/catalog/women/women3.png',
         price: 3000
     },
     {
-        id: '',
+        id: 'id4',
         name: 'Dress',
         img: './img/catalog/women/women4.png',
         price: 4000
     },
     {
-        id: '',
+        id: 'id5',
         name: 'Shirt',
         img: './img/catalog/women/women5.png',
         price: 5000
@@ -33,31 +33,31 @@ const catalogWomen = [
 
 const catalogMen = [
     {
-        id: '',
+        id: 'id6',
         name: 'Shirt',
         img: './img/catalog/men/men1.png',
         price: 1000
     },
     {
-        id: '',
+        id: 'id7',
         name: 'Baize',
         img: './img/catalog/men/men2.png',
         price: 2000
     },
     {
-        id: '',
+        id: 'id8',
         name: 'Polo',
         img: './img/catalog/men/men3.png',
         price: 3000
     },
     {
-        id: '',
+        id: 'id9',
         name: 'Jacket',
         img: './img/catalog/men/men4.png',
         price: 4000
     },
     {
-        id: '',
+        id: 'id10',
         name: 'Jacket',
         img: './img/catalog/men/men5.png',
         price: 5000
@@ -66,19 +66,19 @@ const catalogMen = [
 
 const catalogShoesMen = [
     {
-        id: '',
+        id: 'id11',
         name: 'Boats',
         img: './img/catalog/shoes/shoesmen/shoesmen1.png',
         price: 1000
     },
     {
-        id: '',
+        id: 'id12',
         name: 'Boats',
         img: './img/catalog/shoes/shoesmen/shoesmen2.png',
         price: 2000
     },
     {
-        id: '',
+        id: 'id13',
         name: 'Shoes',
         img: './img/catalog/shoes/shoesmen/shoesmen3.png',
         price: 3000
@@ -86,19 +86,19 @@ const catalogShoesMen = [
 ];
 const catalogShoesWomen = [
     {
-        id: '',
+        id: 'id14',
         name: 'Shoes',
         img: './img/catalog/shoes/shoeswomen/shoeswomen1.png',
         price: 4000
     },
     {
-        id: '',
+        id: 'id15',
         name: 'Shoes',
         img: './img/catalog/shoes/shoeswomen/shoeswomen2.png',
         price: 5000
     },
     {
-        id: '',
+        id: 'id16',
         name: 'Shoes',
         img: './img/catalog/shoes/shoeswomen/shoeswomen3.png',
         price: 5000
@@ -106,31 +106,31 @@ const catalogShoesWomen = [
 ];
 const catalogAccesories = [
     {
-        id: '',
+        id: 'id17',
         name: 'Scarf',
         img: './img/catalog/accesories/accesorie1.png',
         price: 4000
     },
     {
-        id: '',
+        id: '18',
         name: 'Elastic band',
         img: './img/catalog/accesories/accesorie2.png',
         price: 5000
     },
     {
-        id: '',
+        id: 'id19',
         name: 'Bracelet',
         img: './img/catalog/accesories/accesorie3.png',
         price: 5000
     },
     {
-        id: '',
+        id: 'id20',
         name: 'Sunglasses',
         img: './img/catalog/accesories/accesorie4.png',
         price: 5000
     },
     {
-        id: '',
+        id: 'id21',
         name: 'Hours',
         img: './img/catalog/accesories/accesorie5.png',
         price: 5000
@@ -138,36 +138,35 @@ const catalogAccesories = [
 ];
 const catalogBags = [
     {
-        id: '',
+        id: 'id22',
         name: 'Bag',
         img: './img/catalog/bags/bag1.png',
         price: 4000
     },
     {
-        id: '',
+        id: 'id23',
         name: 'Bag',
         img: './img/catalog/bags/bag2.png',
         price: 5000
     },
     {
-        id: '',
+        id: 'id24',
         name: 'Bag',
         img: './img/catalog/bags/bag3.png',
         price: 5000
     },
     {
-        id: '',
+        id: 'id25',
         name: 'Bag',
         img: './img/catalog/bags/bag4.png',
         price: 5000
     },
     {
-        id: '',
+        id: 'id26',
         name: 'Bag',
         img: './img/catalog/bags/bag5.png',
         price: 5000
     }
 ];
 
-const allOurProducts = [catalogWomen, catalogMen, catalogShoesMen, catalogShoesWomen, catalogAccesories, catalogBags];
-console.log(allOurProducts);
+const allOurProducts = catalogWomen.concat(catalogMen, catalogShoesMen, catalogShoesWomen, catalogAccesories, catalogBags);

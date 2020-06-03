@@ -211,3 +211,26 @@ function vvodName(){
     return filterName;
 };
 document.getElementById('search_name').addEventListener('click', vvodName);
+
+
+/* filter цены */
+function price_high_low(){
+    if(nameFilter === allOurProducts[i].name){
+
+    };
+};
+function vvodPrice(){
+    let priceFilterLow = document.querySelector('.price_low').value;
+        let priceFilterHigh = document.querySelector('.price_high').value;
+    let priceProducts = [];
+    while (containrProducts.firstChild) {
+        containrProducts.removeChild(containrProducts.firstChild);
+    }
+    priceProducts = allOurProducts.filter(currentValue => currentValue > 3000 );
+    
+
+    console.log(priceProducts);
+    let filterPrice = new AllProducts('.containr_products', priceProducts, '.value_product');
+    return filterPrice;
+};
+document.getElementById('search_price').addEventListener('click', vvodPrice);

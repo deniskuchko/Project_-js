@@ -8,17 +8,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
 
 </head>
-<body>
+<body >
     <header id="header">
         <div class="logo_menu">
             <a href="#" class="logo">Fashion</a>
             <ul>
                 <li><a href="./index.html" onclick="toogle()">Home</a></li>
-                <li><a href="./catalog.html" onclick="toogle()">Catalog</a></li>               
+                <li id="catalog_FAQ"><a href="./catalog.html" onclick="toogle()">Catalog</a></li>               
                 <li><a href="./myAccaunt/myAccaunt.html" onclick="toogle()">My Account</a></li>                
                 <li><a href="#sales" onclick="toogle()">Sales</a></li>
-                <li><a href="#company" onclick="toogle()"> About Us</a></li>
-                <li><a href="#contact" onclick="toogle()">Contact</a></li>
+                <li id="company_FAQ"><a href="#company" onclick="toogle()"> About Us</a></li>
+                <li id="contact_FAQ"><a href="#contact" onclick="toogle()">Contact</a></li>
             </ul>
         <div class="toogle" onclick="toogle()"></div>
         </div>
@@ -42,6 +42,7 @@
                 </form>
             </div>
         </div>
+        <div class="toogleClass" ></div>
     </header>
     
 
@@ -91,13 +92,13 @@
             
             <div class="main">
                 <div class="container container--1">
-                    <p>Какой-то текст в три колонки</p>
+                    <p>Large company</p>
                 </div>
-                <div class="container container--1">
-                    <p>Какой-то текст в три колонки</p>
+                <div class="container container--2">
+                    <p>Responsibles</p>
                 </div>
-                <div class="container container--1">
-                    <p>Какой-то текст в три колонки</p>
+                <div class="container container--3">
+                    <p>Happy Clients</p>
                 </div>
                 
             </div>
@@ -114,31 +115,41 @@
             <div class="teamBx">
                 <div class="member">
                     <div class="imgBx">
-                        <img src="./img/Blog1.png" >
+                        <img src="./img/Map.png" >
                     </div>
                     <div class="details">
                         <div>
-                            <h2>Some <span>Headline</span> Here</h2>
+                            <h2>Our adress is here <span>is here</span> </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="member">
+                    <div class="sci">
+                        <ul>
+                            <li>
+                                <h3>Phone <span>(00)000-00-00</span> </h3>
+                                <a href="#catalog"> <img src="./img/social/facebook.png" alt=""></a>
+                                <a href="#"> <img src="./img/social/inst.png" alt=""></a>
+                                <a href="#"> <img src="./img/social/telegram.png" alt=""></a>
+                                <a href="#"> <img src="./img/social/twitter.png" alt=""></a>
+        
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="details">
+                        <div>
+                            <h2>Our <span>Contacts</span> </h2>
+                            
                         </div>
                     </div>
                 </div>
                 <div class="member">
                     <div class="imgBx">
-                        <img src="./img/Blog2.png" >
+                        <img src="./img/weOffers.png" >
                     </div>
                     <div class="details">
                         <div>
-                            <h2>Some <span>Headline</span> Here</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="imgBx">
-                        <img src="./img/Blog3.png" >
-                    </div>
-                    <div class="details">
-                        <div>
-                            <h2>Some <span>Headline</span> Here</h2>
+                            <h2>We <span>Offers</span> </h2>
                         </div>
                     </div>
                 </div>

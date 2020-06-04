@@ -21,32 +21,32 @@ class AllProducts{
             let activeText;
 
             if(index === -1){
-                activeText = 'Добавить в корзину';
+                activeText = 'Добавить';
             } else {
-                activeText = 'Удалить из корзины'
+                activeText = 'Удалить'
             };
 
 
-            let item  = this.getProductItem({
+            let item  = createProduct.getProductItem({
                 nameTag: 'div',
                 nameclass: 'item',
             });
-            let name = this.getProductItem({
+            let name = createProduct.getProductItem({
                 nameTag: 'div',
                 nameclass: 'name',
                 contentText: this.catalogProducts[i].name
             });
-            let img  = this.getProductItem({
+            let img  = createProduct.getProductItem({
                 nameTag: 'div',
                 nameclass: 'image',
                 bgImage: `url('${this.catalogProducts[i].img}')`
             });
-            let price = this.getProductItem({
+            let price = createProduct.getProductItem({
                 nameTag: 'div',
                 nameclass: 'price',
                 contentText: this.catalogProducts[i].price
             });
-            let btn = this.getProductItem({
+            let btn = createProduct.getProductItem({
                 nameTag: 'i',
                 nameclass: 'fas fa-shopping-basket',
                 contentText: activeText,
@@ -60,9 +60,9 @@ class AllProducts{
                 womenProducts.catalogCounter.innerHTML = result.products.length;
 
                 if(result.statusProduct){
-                    this.innerHTML = 'Удалить из корзины';
+                    this.innerHTML = 'Удалить';
                 } else {
-                    this.innerHTML = 'Добавить в корзину';
+                    this.innerHTML = 'Добавить';
                 }
             })
 
@@ -76,22 +76,7 @@ class AllProducts{
         this.containerProducts.appendChild(wraper);
     };
 
-    getProductItem(card){
-        let element = document.createElement(card.nameTag);
-        if('nameclass' in card){
-            element.setAttribute('class', card.nameclass);
-        };
-        if('contentText' in card){
-            element.innerHTML = card.contentText;
-        };
-        if('bgImage' in card){
-            element.style.backgroundImage = card.bgImage;
-        };
-        if('id' in card){
-            element.setAttribute('id', card.id);
-        }
-        return element;
-    };
+    
 }
 
 
@@ -192,45 +177,6 @@ function openFilter(){
 
 document.querySelector('#filter').onmouseover = openFilter;
 
-/* filter имени */
 
-function vvodName(){
-    let nameFilter = document.querySelector('.name_filter').value;
-    const nameProducts = [];
-    while (containrProducts.firstChild) {
-        containrProducts.removeChild(containrProducts.firstChild);
-    }
-
-    for(let i = 0; i < allOurProducts.length; i++){
-        if(nameFilter === allOurProducts[i].name){
-            nameProducts.push(allOurProducts[i]);
-        }
-        
-    }
-    let filterName = new AllProducts('.containr_products', nameProducts, '.value_product');
-    return filterName;
-};
-document.getElementById('search_name').addEventListener('click', vvodName);
-
-
-/* filter цены */
-function price_high_low(){
-    if(nameFilter === allOurProducts[i].name){
-
-    };
-};
-function vvodPrice(){
-    let priceFilterLow = document.querySelector('.price_low').value;
-        let priceFilterHigh = document.querySelector('.price_high').value;
-    let priceProducts = [];
-    while (containrProducts.firstChild) {
-        containrProducts.removeChild(containrProducts.firstChild);
-    }
-    priceProducts = allOurProducts.filter(currentValue => currentValue > 3000 );
-    
-
-    console.log(priceProducts);
-    let filterPrice = new AllProducts('.containr_products', priceProducts, '.value_product');
-    return filterPrice;
-};
-document.getElementById('search_price').addEventListener('click', vvodPrice);
+  
+  

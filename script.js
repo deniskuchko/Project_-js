@@ -6,86 +6,61 @@ function toogle(){
     header.classList.toggle("active");
 }
 
-/* card after sales */
-/* class parallaxTiltEffect {
-    constructor({element, tiltEffect}){
-        this.element = element;
-        this.container = document.querySelector(".container");
-        this.size = [300, 600];
-        [this.w, this.h] = this.size;
-        
-        this.tiltEffect = tiltEffect;
-        this.mouseOnComponent = false;
-        this.handleMouseMove = this.handleMouseMove.bind(this);
-        this.handleMouseEnter = this.handleMouseEnter.bind(this);
-        this.handleMouseLeave = this.handleMouseLeave.bind(this);
-        this.defaultStates = this.defaultStates.bind(this);
-        this.setProperty = this.setProperty.bind(this);
-        this.init = this.init.bind(this);
-        this.init();
-    }
-    handleMouseMove(event){
-        const {offsetX, offsetY} = event;
-        let X;
-        let Y;
-           
-        if(this.tiltEffect = "reverse"){
-            X = ((offsetX - (this.w/2)) /3) /3;
-            Y = (-(offsetY - (this.h/2)) /3) /3;
-        }
-        else if(this.tiltEffect = "normal"){
-            X = (-(offsetX - (this.w/2)) /3) /3;
-            Y = ((offsetY - (this.h/2)) /3) /3;
-        }
+/* Изменение цвета страницы */
 
-        this.setProperty('--rY', X.toFixed(2));
-        this.setProperty('--rX', Y.toFixed(2));
+function toogleClass(){
+    const body = document.querySelector('body');
+    const sec = document.querySelectorAll('.sec');
+    body.classList.toggle('light_on');
+    for(let i = 0; i < sec.length-1; i++){
+        sec[i].style.background = 'none';
+    }
+};
+document.querySelector('.toogleClass').onmouseover = toogleClass;
 
-        this.setProperty('--bY', (80 - (X/4).toFixed(2)) + '%');
-        this.setProperty('--bX', (80 - (Y/4).toFixed(2)) + '%');
-    }
-    handleMouseEnter(){
-        this.mouseOnComponent = true;
-        this.container.classList.add("container--active");
-    }
-    handleMouseLeave(){
-        this.mouseOnComponent = false;
-        this.defaultStates;
-    }
-    defaultStates(){
-        this.container.classList.remove("container--active");
-        this.setProperty('--rY', 0);
-        this.setProperty('--rX', 0);
-        this.setProperty('--bY', '80%');
-        this.setProperty('--bX', '50%');
-    }
-    setProperty(p, v){
-        return this.container.style.setProperty(p, v);
-    }
+/* Выпадающий список */
 
-        init(){
-            this.element.addEventListener('mousemove',this.handleMouseMove);
-            this.element.addEventListener('mouseenter',
-        this.handleMouseEnter);
-        this.element.addEventListener('mouseleave',
-        this.handleMouseLeave);
-        }
+let div =document.createElement('div');
+div.className = 'faq';
+div.insertAdjacentHTML('afterbegin', `
+<a href="./catalog.html">All products</a>
+<a href="#men">Men</a>
+<a href="#women">Women</a>
+<a href="#shoesmen">Shoes For Men</a>
+<a href="#shoeswomen">Shoes For Women</a>
+<a href="#bags">Bags</a>
+<a href="#accesories">Accesories</a>`);
+function openFAQShow(){
+    document.querySelector('#catalog_FAQ').append(div);
+    document.querySelector('.faq').style.display = 'block';
+}
+function openFAQNone(){
+    document.querySelector('.faq').style.display = 'none';
 }
 
-const $ = e =>  document.querySelector(e);
+document.querySelector('#catalog_FAQ').onmouseover = openFAQShow;
+document.querySelector('#catalog_FAQ').onmouseout  = openFAQNone;
 
-const wrap1 = new parallaxTiltEffect({
-    element: $('.wrap--1'),
-    tiltEffect: 'reverse'
-});
-const wrap2 = new parallaxTiltEffect({
-    element: $('.wrap--2'),
-    tiltEffect: 'normal'
-});
-const wrap3 = new parallaxTiltEffect({
-    element: $('.wrap--3'),
-    tiltEffect: 'reverse'
-});
+/* Создание хлебных крошек */
 
+let liCrumb = document.getElementById('crumbs');
+console.log(liCrumb);
+function createCrumbs(){
+    liCrumb.insertAdjacentHTML('beforeend', `<a href="./catalog.html">All products</a>`);
+};
+/* div.insertAdjacentHTML('afterbegin', `
+<a href="./catalog.html">All products</a>
+<a href="#men">Men</a>
+<a href="#women">Women</a>
+<a href="#shoesmen">Shoes For Men</a>
+<a href="#shoeswomen">Shoes For Women</a>
+<a href="#bags">Bags</a>
+<a href="#accesories">Accesories</a>`);
+function openFAQShow(){
+    document.querySelector('#catalog_FAQ').append(div);
+    document.querySelector('.faq').style.display = 'block';
+}
+function openFAQNone(){
+    document.querySelector('.faq').style.display = 'none';
+} */
 
- */

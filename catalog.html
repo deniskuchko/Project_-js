@@ -14,11 +14,11 @@
             <a href="#" class="logo">Fashion</a>
             <ul>
                 <li><a href="./index.html" onclick="toogle()">Home</a></li>
-                <li><a href="./catalog.html" onclick="toogle()">Catalog</a></li>               
+                <li id="catalog_FAQ"><a href="./catalog.html" onclick="toogle()">Catalog</a></li>               
                 <li><a href="./myAccaunt/myAccaunt.html" onclick="toogle()">My Account</a></li>                
-                <li><a href="#sales" onclick="toogle()">Sales</a></li>
-                <li><a href="#company" onclick="toogle()"> About Our Company</a></li>
-                <li><a href="#contact" onclick="toogle()">Contact</a></li>
+                <li><a href="./index.html#sales" onclick="toogle()">Sales</a></li>
+                <li id="company_FAQ"><a href="./index.html#company" onclick="toogle()"> About Us</a></li>
+                <li id="contact_FAQ"><a href="./index.html#contact" onclick="toogle()">Contact</a></li>
             </ul>
         <div class="toogle" onclick="toogle()"></div>
         </div>
@@ -41,6 +41,12 @@
                     <button type="button" class="btn_chat cancel">Close</button>
                 </form>
             </div>
+        </div>
+        <div class="toogleClass" ></div>
+        <div class="breadcrumbs">
+            <ul>
+                <li id="crumbs"></li>
+            </ul>
         </div>
     </header>
     
@@ -65,7 +71,7 @@
                         <li class="filter">
                             <button id="filter">Filter</button>
                             <ol id="price"> <label for="">Price</label>
-                                <input class="price_low" type="text" value="1000">
+                                <input class="price_low" type="text" value="2000">
                                 <input class="price_high" type="text" value="3000">
                                 <i id='search_price'class="fas fa-search"></i>
                             </ol>
@@ -78,17 +84,17 @@
                     </ul>
                 </div>
             </div>
+            <div class="container_cart"></div>
+
             <div class="mxw800p">
                 <h3>Catalog</h3>
                 <p class="value_product ">
-                    Manage to buy
+                    
                 </p>
             </div>
             <div class="containr_products">
-
-                
             </div>
-            
+            <div class="container_cart"></div>
         </div>
     </section>
     <section class="sec contact" id="contact">
@@ -152,7 +158,10 @@
     <script src="./footer_script.js"></script>
     <script src="./script.js"></script>
     <script src="./catalog.js"></script>
+    <script src="./catalog/catalogproducts.js"></script>
     <script src="./catalog/store.js"></script>
     <script src="./catalog_script.js"></script>
+    <script src="./catalog/catalog_filter.js"></script>
+    <script src="./catalog/cart.js"></script>
 </body>
 </html>

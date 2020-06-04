@@ -1,7 +1,6 @@
 const catalogBrands = ['./ourbrands/brand1.png', './ourbrands/brand2.png', './ourbrands/brand3.png'];
 let i = 0;
 function next(){
-    console.log(i);
     i++;
     if(i === catalogBrands.length){
         i = 0;
@@ -11,7 +10,6 @@ function next(){
 };
 
 function previw(){
-    console.log(i);
     i = i-1;
     if(i < 0 ){
         i = catalogBrands.length - 1;

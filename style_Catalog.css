@@ -1,10 +1,10 @@
-.containr_products{
+.containr_products,  .wrapper_cart{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     margin: 0 auto;
 }
-.containr_products .item{
+.containr_products .item, .wrapper_cart .item{
     background-color: #e8f5f8;
     width: 250px;
     border: 2px solid gray;
@@ -12,12 +12,21 @@
     height: 300px;
     text-align: center;
 }
-.containr_products .image{
+.containr_products .image, .wrapper_cart .image{
     background-image: url('./img/grusha.png');
     height: 200px;
     background-size: cover;
     border-radius: 10px;
     background-size: cover;
+}
+.close{
+    background: #000;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .containr_products .image:hover{
     background-position-y: center;
@@ -25,9 +34,18 @@
     transform: scale(0.8);
 }
 .containr_products i{
-
+    position: relative;
+    left: -15%;
     width: 19px;
     height: 20px;;
+}
+.container_cart{
+    display: none;
+    height: 100vh;
+    width: 100%;
+    background: green;
+    position: absolute;
+    top: 0;
 }
 .last{
 position: absolute;

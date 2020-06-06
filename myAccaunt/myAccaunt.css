@@ -76,10 +76,11 @@
 
 /* личный кабинет*/
 .client_page{
-    position: absolute;
+    position:relative;
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
     display: none;
     width: 550px;
     box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
@@ -131,4 +132,10 @@
 
 .input_form input[type="submit"] {
     margin-bottom: 20px;
+}
+
+@media (max-width: 576px){
+    .form_accaunt h4, .form_autorisation h4 {
+        margin: 10px 0;
+    }
 }

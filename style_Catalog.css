@@ -48,7 +48,7 @@
     top: 0;
 }
 .last{
-position: absolute;
+    position: absolute;
     top: -42px;
 }
 #sidebar{
@@ -120,9 +120,6 @@ position: absolute;
     background-color: #666;
     margin: 4px 0;
 }
-
-
-
 #containr_products, .item .image {
     transition:  600ms;
 }

@@ -1,4 +1,4 @@
-let newclient = [
+let newclient = 
     {   
         users:'Client',
         name: '',
@@ -6,8 +6,7 @@ let newclient = [
         password: '',
         email_users: ''
 
-    }
-];
+    };
 
 /* Проверка логина и пароля */
 function passwordTrue(){
@@ -64,18 +63,16 @@ function autorisation(){
 
         switch(passwords){
             case(passwordsRepeat):
-                newclient.login = `${logins}`;
-                newclient.name = `${logins}`;
-                newclient.password = `${passwords}`;
-                newclient.email_users = `${emails}`;
-                /* if(newclient === users[users.length]){
-                    alert('The data entered is already in use by other customers');
-                } else{
-                    users.push(newclient);
-                    alert('authorization took place successfully');
-                } */
-                
+            newclient = {
+                users : 'Client',
+                login : `${logins}`,
+                name : `${logins}`,
+                password : `${passwords}`,
+                email_users : `${emails}`
+            };
+                console.log(newclient);
                 users.push(newclient);
+                console.log(users);
                 alert('authorization took place successfully');
 
             break;
@@ -88,9 +85,18 @@ function autorisation(){
     else {
         alert(`Enter All Data`);
     };
-    myPage();
     console.log(users);
-    console.log(newclient);
+    for(let i = 0; i < users.length; i++){
+        if(users[users.length-1].login === users[i].login && users[users.length-1].password === users[i].password && i !== users.length-1){
+            
+            console.log(users[users.length-1]);
+            console.log(i);
+            console.log(users);
+            users.splice(users.length-1, 1);
+        }
+    }
+    console.log(users);
+/*     myPage();*/
 };
 
 document.getElementById('vvod_dannix_autorisation').addEventListener('click', autorisation);

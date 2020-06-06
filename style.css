@@ -16,12 +16,9 @@ body{
 body.light_on{
     background: #2f3640;
 }
-/* body.light_on .sec{
-    background: none;
-} */
 .toogleClass{
     position: absolute;
-    top: 80px;
+    top: 93px;
     right: 105px;
     width: 15px;
     height: 15px;
@@ -81,7 +78,6 @@ header .logo{
     letter-spacing: 2px;
     transition: 0.6s;
 }
-
 header ul{
     position: relative;
     display: flex;
@@ -107,7 +103,6 @@ header.sticky .logo,
 header.sticky ul li a{
     color: #000;
 }
-
 header .faq{
     position: fixed;
     width: 125px;
@@ -168,6 +163,23 @@ header .faq a{
     color:#fff;
     transform: scale(1.5);
 }
+
+/* Breadcrumbs */
+.breadcrumbs{
+    position: absolute;
+    top: 90px;
+    left: 55px;
+    font-size: 14px;
+}
+.breadcrumbs a:last-child{
+    color: #0fc3f5;
+}
+.breadcrumbs a, .breadcrumbs span{
+    color: #7d91ad;
+    text-decoration: none;
+
+}
+
 /* Chat */
 
 
@@ -224,7 +236,7 @@ header .faq a{
 }
 .search-box{
     position: absolute;
-    top: 60%;
+    top: 110px;
     right: 20px;
     background: #fff;
     border-radius: 40px;
@@ -266,7 +278,6 @@ header .faq a{
 .sec{
     background: #fff;
     padding: 100px;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -376,7 +387,6 @@ p{
     border: 1px solid ;
     transition: 1s;
     color: #043c5c;
-    
 } 
 .sales .image{
     background-image: url('./sales/sales1.png');
@@ -436,7 +446,6 @@ p{
     transition: 0.2s;
     opacity: 1;
 }
-
 .teamBx .member:hover .details{
     opacity: 0;
 }
@@ -446,7 +455,6 @@ p{
 .teamBx .member .details ul{
     opacity: 0;
 }
-
 .teamBx .member .details h2, .sci h3{
     color: #fff;
      text-transform: uppercase;
@@ -557,7 +565,7 @@ color: #fff;
 .main{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 .wrap{
@@ -576,12 +584,11 @@ color: #fff;
     background: linear-gradient(hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1)), url("./ourbrands/brand3.png");
 }
 .container{
-    
     width: 15rem;
     height: 18rem;
     border: 1px solid #e7e8f1;
     border-radius: 1.6rem;
-    padding: 4rem;
+    padding: 3rem;
     display: flex;
     align-items: flex-end;
     position: relative;
@@ -591,7 +598,6 @@ color: #fff;
     background-position-x: -100px;
     transition: 0.5s;
     opacity: 0.8;
-
 }
 .container:hover{
     transform: scale(1.5);
@@ -718,6 +724,9 @@ color: #fff;
         font-size: 46px;
         line-height: 2;
     }
+    .form_accaunt h4, .form_autorisation h4{
+        margin: 10px 0;
+    }
 }
 @media(max-width:425px){
     header{
@@ -733,3 +742,33 @@ color: #fff;
 
     }
 }
+/* @media(max-width:320px){
+
+    
+.teamBx .member{
+    position: relative;
+    background: #000;
+    min-height: 300px;
+    width: 250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.teamBx .member .imgBx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.teamBx .member .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+} */

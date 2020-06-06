@@ -14,7 +14,7 @@
             <a href="#" class="logo">Fashion</a>
             <ul>
                 <li><a href="./index.html" onclick="toogle()">Home</a></li>
-                <li id="catalog_FAQ"><a href="./catalog.html" onclick="toogle()">Catalog</a></li>               
+                <li id="catalog_FAQ"><a href="" onclick="toogle()">Catalog</a></li>               
                 <li><a href="./myAccaunt/myAccaunt.html" onclick="toogle()">My Account</a></li>                
                 <li><a href="./index.html#sales" onclick="toogle()">Sales</a></li>
                 <li id="company_FAQ"><a href="./index.html#company" onclick="toogle()"> About Us</a></li>
@@ -28,6 +28,11 @@
             <a class="search-basket"href="#"><i class="fas fa-shopping-basket"></i></a>
             <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
                 
+        </div>
+        <div class="breadcrumbs">
+            <a href="./index.html">Home</a>
+            <span>/</span>
+            <a class="lineOut" href="#">Catalog</a>
         </div>
         <!-- Создание chat кнопки -->
         <div id="chatbox" class="chatbox"> 
@@ -43,11 +48,6 @@
             </div>
         </div>
         <div class="toogleClass" ></div>
-        <div class="breadcrumbs">
-            <ul>
-                <li id="crumbs"></li>
-            </ul>
-        </div>
     </header>
     
     <section class="sec work" id="catalog">
@@ -94,7 +94,6 @@
             </div>
             <div class="containr_products">
             </div>
-            <div class="container_cart"></div>
         </div>
     </section>
     <section class="sec contact" id="contact">
@@ -153,6 +152,7 @@
         </div>
     </section>
     
+    <script src="./breadcrumbs/breadcrumbs.js"></script>
     <script src="./chatbox.js"></script>
     <script src="./footer.js"></script>
     <script src="./footer_script.js"></script>

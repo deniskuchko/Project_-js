@@ -51,7 +51,7 @@ class Cart{
             cart.containerCart.appendChild(wrapper);
             cart.containerCart.appendChild(close);
         });
-    };
+    }
 
     getProductCart(){
         let products = store.getProducts();

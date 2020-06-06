@@ -2,7 +2,7 @@ const users = [
     {   
         users:'Client',
         name: 'Olga',
-        login: '123',
+        login: 'Olga',
         password: '123',
         email_users: ''
     },
@@ -13,6 +13,20 @@ const users = [
         password: 'password',
         email_users: ''
 
+    },
+    {   
+        users:'Client',
+        name: 'Денис',
+        login: 'Денис',
+        password: '123',
+        email_users: '123'
+    },
+    {   
+        users:'Client',
+        name: 'Денис',
+        login: 'denis',
+        password: '123',
+        email_users: '123'
     }
     
 ];

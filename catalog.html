@@ -24,9 +24,9 @@
         </div>
         
         <div class="search-box">
-            <input class="search-txt" type="text" name="" placeholder="Search">
+            <input class="search-txt" type="text" name=""  value="Shirt">
             <a class="search-basket"href="#"><i class="fas fa-shopping-basket"></i></a>
-            <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
+            <a class="search-btn" id="search-btn" href="#"><i class="fas fa-search"></i></a>
                 
         </div>
         <div class="breadcrumbs">
@@ -85,14 +85,16 @@
                 </div>
             </div>
             <div class="container_cart"></div>
-
+            <div class="searchContainer">
+                <h3>Here Is The Search Result</h3>
+            </div>
             <div class="mxw800p">
                 <h3>Catalog</h3>
-                <p class="value_product ">
-                    
+                <p class="catalog_counter">
+                    Your products:
                 </p>
             </div>
-            <div class="containr_products">
+            <div class="container_products"></div>
             </div>
         </div>
     </section>
@@ -163,5 +165,7 @@
     <script src="./catalog_script.js"></script>
     <script src="./catalog/catalog_filter.js"></script>
     <script src="./catalog/cart.js"></script>
+    <script src="./searchAndbasket/searchAndBasket.js"></script>
+
 </body>
 </html>

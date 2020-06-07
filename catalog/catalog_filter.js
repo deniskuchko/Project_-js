@@ -3,17 +3,17 @@
 function vvodName(){
     let nameFilter = document.querySelector('.name_filter').value;
     const nameProducts = [];
-    while (containrProducts.firstChild) {
-        containrProducts.removeChild(containrProducts.firstChild);
+    while (containerProducts.firstChild) {
+        containerProducts.removeChild(containerProducts.firstChild);
     }
 
-    for(let i = 0; i < allOurProducts.length; i++){
-        if(nameFilter === allOurProducts[i].name){
-            nameProducts.push(allOurProducts[i]);
+    for(let i = 0; i < catalogProduct.length; i++){
+        if(nameFilter === catalogProduct[i].name){
+            nameProducts.push(catalogProduct[i]);
         }
         
     }
-    let filterName = new AllProducts('.containr_products', nameProducts, '.value_product');
+    let filterName = new AllProducts('.container_products', nameProducts, '.catalog_counter');
     return filterName;
     
 };   
@@ -28,14 +28,14 @@ function vvodPrice(){
     let priceFilterHigh = document.querySelector('.price_high').value;
     priceFilterLow = +priceFilterLow;
     priceFilterHigh = +priceFilterHigh;
-    priceProducts = allOurProducts.filter(function( record ){
+    priceProducts = catalogProduct.filter(function( record ){
         return record.price >= priceFilterLow && record.price <= priceFilterHigh;
     });
-    priceProduct = allOurProducts;
+    priceProduct = catalogProduct;
 
-        while (containrProducts.firstChild) {
-        containrProducts.removeChild(containrProducts.firstChild);
+        while (containerProducts.firstChild) {
+        containerProducts.removeChild(containerProducts.firstChild);
         }
-    let filterPrice = new AllProducts('.containr_products', priceProducts, '.value_product');
+    let filterPrice = new AllProducts('.container_products', priceProducts, '.catalog_counter');
 };
 document.getElementById('search_price').addEventListener('click',vvodPrice);

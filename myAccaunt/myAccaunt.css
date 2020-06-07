@@ -1,3 +1,9 @@
+.content{
+    top: 80px;
+}
+.sec {
+    padding: 25px 50px 100px 50px;
+}
 .form_accaunt, .form_autorisation{    
     background: rgba(0,0,0,.2);
     max-width: 400px;
@@ -77,16 +83,10 @@
 /* личный кабинет*/
 .client_page{
     position:relative;
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
     display: none;
-    width: 550px;
     box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
 }
 .client_page .left{
-    width: 35%;
     background: linear-gradient(to right, #01a9ac, #01dbdf);
     padding: 30px 25px;
     border-top-left-radius: 5px;
@@ -105,12 +105,12 @@
     font-size: 12px;    
 }
 .client_page .right{
-    width: 65%;
     background: #fff;
     padding: 0px 25px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     text-align: left;
+    width: 100%;
 }
 .client_page .right .info,
 .client_page .right .projects{
@@ -137,5 +137,27 @@
 @media (max-width: 576px){
     .form_accaunt h4, .form_autorisation h4 {
         margin: 10px 0;
+    }
+    .client_page .right  h3{
+        font-size: 30px;
+    }
+}
+@media (max-width: 500px){
+   
+    .client_page .right  h3{
+        font-size: 20px;
+        padding-top: 5px;
+    }
+    .client_page .right p {
+        
+        margin-bottom: 5px;
+        
+    }
+    .client_page{
+        
+        flex-wrap: wrap;
+    } 
+    .client_page .left {
+        width: 100%;
     }
 }

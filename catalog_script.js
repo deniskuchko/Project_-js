@@ -11,44 +11,51 @@ class AllProducts{
         this.catalogCounter = document.querySelector(catalogCounter);
         this.createProducts();
     };
+
+  /*   <div class="item">
+            <div class="name">Product1</div>
+            <div class="image"></div>
+            <div class="price">111</div>
+            <button class="btn">В корзину</button>
+        </div> */
+
     createProducts(){
-        let wraper = document.createElement('slot');
+        let wrapper = document.createElement('slot');
         let products = store.getProducts();
         this.catalogCounter.innerHTML = products.length;
         for(let i = 0; i < this.catalogProducts.length; i++){
-
             let index = products.indexOf(this.catalogProducts[i].id);
             let activeText;
 
             if(index === -1){
-                activeText = 'Добавить';
-            } else {
-                activeText = 'Удалить'
-            };
+                activeText = 'Добавить в корзину';
+            } else{
+                activeText = 'Удалить из корзины';
+            }
 
-
-            let item  = createProduct.getProductItem({
+            let item = createProduct.getProductItem({
                 nameTag: 'div',
-                nameclass: 'item',
+                nameClass: 'item'
             });
             let name = createProduct.getProductItem({
                 nameTag: 'div',
-                nameclass: 'name',
+                nameClass: 'name',
                 contentText: this.catalogProducts[i].name
             });
-            let img  = createProduct.getProductItem({
+            let img = createProduct.getProductItem({
                 nameTag: 'div',
-                nameclass: 'image',
+                nameClass: 'image',
                 bgImage: `url('${this.catalogProducts[i].img}')`
+                
             });
             let price = createProduct.getProductItem({
                 nameTag: 'div',
-                nameclass: 'price',
+                nameClass: 'price',
                 contentText: this.catalogProducts[i].price
             });
             let btn = createProduct.getProductItem({
-                nameTag: 'i',
-                nameclass: 'fas fa-shopping-basket',
+                nameTag: 'button',
+                nameClass: 'btn',
                 contentText: activeText,
                 id: this.catalogProducts[i].id
             });
@@ -57,12 +64,12 @@ class AllProducts{
                 let id = this.getAttribute('id');
                 let result = store.putProduct(id);
 
-                womenProducts.catalogCounter.innerHTML = result.products.length;
+                allProducts.catalogCounter.innerHTML = result.products.length;
 
                 if(result.statusProduct){
-                    this.innerHTML = 'Удалить';
-                } else {
-                    this.innerHTML = 'Добавить';
+                    this.innerHTML = 'Удалить из корзины';
+                } else{
+                    this.innerHTML = 'Добавить в корзину';
                 }
             })
 
@@ -70,94 +77,94 @@ class AllProducts{
             item.appendChild(img);
             item.appendChild(price);
             item.appendChild(btn);
-            wraper.appendChild(item);
-        };
-
-        this.containerProducts.appendChild(wraper);
+            wrapper.appendChild(item);
+        }
+        this.containerProducts.appendChild(wrapper);
     };
-
-    
 }
+let allProducts = new AllProducts('.container_products', catalogProduct, '.catalog_counter');
 
 
-let womenProducts = new AllProducts('.containr_products', catalogWomen, '.value_product');
-let menProducts = new AllProducts('.containr_products', catalogMen, '.value_product');
-let shoesMen = new AllProducts('.containr_products', catalogShoesMen, '.value_product');
-let shoesWomen = new AllProducts('.containr_products', catalogShoesWomen, '.value_product');
-let accesories = new AllProducts('.containr_products', catalogAccesories, '.value_product');
-let bags = new AllProducts('.containr_products', catalogBags, '.value_product');
+
 /* Сдвиг карточек при открытии списка Menu */
 
-let  containrProducts = document.querySelector('.containr_products');
+let  containerProducts = document.querySelector('.container_products');
 let i = 1;
 function sdvig(){
-    if(i === 1){
+    if(i === 1 && screen.width >= 575){
         i++;
-         containrProducts.style.marginLeft = '250px';
-         containrProducts.style.transition = '0.6s'
+        containerProducts.style.marginLeft = '250px';
+        containerProducts.style.transition = '0.6s';
+        searchContainer.style.marginLeft = '250px';
+        searchContainer.style.transition = '0.6s';
+        document.querySelector('.container_cart').style.marginLeft = '250px';
+        document.querySelector('.container_cart').style.transition = '0.6s';
+
     } else{
         i = 1;
-        containrProducts.style.marginLeft = '0px';
-        containrProducts.style.transition = '0.6s'
-
+        containerProducts.style.marginLeft = '0px';
+        containerProducts.style.transition = '0.6s';
+        searchContainer.style.marginLeft = '0px';
+        searchContainer.style.transition = '0.6s';
+        document.querySelector('.container_cart').style.marginLeft = '0px';
+        document.querySelector('.container_cart').style.transition = '0.6s';
     }
 };
-
 document.querySelector('.toogle_btn').addEventListener('click', sdvig);
 /* Вывод на экран только выбранной категории тооваров */
 
 
 document.getElementById('men').addEventListener('click', () =>{
-    while (containrProducts.firstChild) {
-        containrProducts.removeChild(containrProducts.firstChild);
+    while (containerProducts.firstChild) {
+        containerProducts.removeChild(containerProducts.firstChild);
     }
-    menProducts = new AllProducts('.containr_products', catalogMen, '.value_product');
+    menProducts = new AllProducts('.container_products', catalogMen, '.catalog_counter');
     
 });
 
 document.getElementById('women').addEventListener('click', () =>{
-    while (containrProducts.firstChild) {
-        containrProducts.removeChild(containrProducts.firstChild);
+    while (containerProducts.firstChild) {
+        containerProducts.removeChild(containerProducts.firstChild);
     }
-    womenProducts = new AllProducts('.containr_products', catalogWomen, '.value_product');
+    womenProducts = new AllProducts('.container_products', catalogWomen, '.catalog_counter');
 });
 
 document.getElementById('shoesmen').addEventListener('click', () =>{
-    while (containrProducts.firstChild) {
-        containrProducts.removeChild(containrProducts.firstChild);
+    while (containerProducts.firstChild) {
+        containerProducts.removeChild(containerProducts.firstChild);
     }
-    shoesMen = new AllProducts('.containr_products', catalogShoesMen, '.value_product');
+    shoesMen = new AllProducts('.container_products', catalogShoesMen, '.catalog_counter');
 });
 document.getElementById('shoeswomen').addEventListener('click', () =>{
-    while (containrProducts.firstChild) {
-        containrProducts.removeChild(containrProducts.firstChild);
+    while (containerProducts.firstChild) {
+        containerProducts.removeChild(containerProducts.firstChild);
     }
-    shoesWomen = new AllProducts('.containr_products', catalogShoesWomen, '.value_product');
+    shoesWomen = new AllProducts('.container_products', catalogShoesWomen, '.catalog_counter');
 });
 
 document.getElementById('bags').addEventListener('click', () =>{
-    while (containrProducts.firstChild) {
-        containrProducts.removeChild(containrProducts.firstChild);
+    while (containerProducts.firstChild) {
+        containerProducts.removeChild(containerProducts.firstChild);
     }
-    bags = new AllProducts('.containr_products', catalogBags, '.value_product');
+    bags = new AllProducts('.container_products', catalogBags, '.catalog_counter');
 });
 document.getElementById('accesories').addEventListener('click', () =>{
-    while (containrProducts.firstChild) {
-        containrProducts.removeChild(containrProducts.firstChild);
+    while (containerProducts.firstChild) {
+        containerProducts.removeChild(containerProducts.firstChild);
     }
-    accesories = new AllProducts('.containr_products', catalogAccesories, '.value_product');
+    accesories = new AllProducts('.container_products', catalogAccesories, '.catalog_counter');
 });
 
 document.getElementById('all_products').addEventListener('click', () =>{
-    while (containrProducts.firstChild) {
-        containrProducts.removeChild(containrProducts.firstChild);
+    while (containerProducts.firstChild) {
+        containerProducts.removeChild(containerProducts.firstChild);
     }
-    womenProducts = new AllProducts('.containr_products', catalogWomen, '.value_product');
-    menProducts = new AllProducts('.containr_products', catalogMen, '.value_product');
-    shoesMen = new AllProducts('.containr_products', catalogShoesMen, '.value_product');
-    shoesWomen = new AllProducts('.containr_products', catalogShoesWomen, '.value_product');
-    accesories = new AllProducts('.containr_products', catalogAccesories, '.value_product');
-    bags = new AllProducts('.containr_products', catalogBags, '.value_product');
+    womenProducts = new AllProducts('.container_products', catalogWomen, '.catalog_counter');
+    menProducts = new AllProducts('.container_products', catalogMen, '.catalog_counter');
+    shoesMen = new AllProducts('.container_products', catalogShoesMen, '.catalog_counter');
+    shoesWomen = new AllProducts('.container_products', catalogShoesWomen, '.catalog_counter');
+    accesories = new AllProducts('.container_products', catalogAccesories, '.catalog_counter');
+    bags = new AllProducts('.container_products', catalogBags, '.catalog_counter');
 });
 
 /* filter  открытие вкладок*/

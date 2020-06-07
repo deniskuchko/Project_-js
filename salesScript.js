@@ -67,6 +67,7 @@ class AllSales{
 
 let allSales = new AllSales('.sales', catalogSales);
 
+/* слайдер sales */
 item = document.querySelectorAll('.item');
 
 for(let i = 0; i < item.length; i++){

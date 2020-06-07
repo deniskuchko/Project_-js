@@ -130,6 +130,7 @@ header .faq a{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-position-x: 55%;
     transition: 0.6s;
 
 }
@@ -277,7 +278,7 @@ header .faq a{
 }
 .sec{
     background: #fff;
-    padding: 100px;
+    padding: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -589,6 +590,7 @@ color: #fff;
     border: 1px solid #e7e8f1;
     border-radius: 1.6rem;
     padding: 3rem;
+    margin-top: 10px;
     display: flex;
     align-items: flex-end;
     position: relative;
@@ -699,7 +701,7 @@ color: #fff;
         padding: 0 50px;
     }
     .sec{
-        padding: 100px 50px 50px 50px;
+        padding: 25px 50px 50px 50px;
     }
     .row100{
         flex-direction: column;
@@ -716,7 +718,8 @@ color: #fff;
         font-size: 24px;
     }
     h3{
-        font-size: 36px;
+        font-size: 40px;
+        padding-top: 20px;
     }
 }
 @media(max-width:576px){
@@ -742,33 +745,21 @@ color: #fff;
 
     }
 }
-/* @media(max-width:320px){
+@media(max-width:320px){
 
+    .teamBx .member .details {
+        width: 88%;
+    }
     
-.teamBx .member{
-    position: relative;
-    background: #000;
-    min-height: 300px;
-    width: 250px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .teamBx .member .imgBx img {
+        width: 88%;
+    }
+    .teamBx .member {
+        width: 220px;
+        margin-left: 0;
+        
+    }
+    .teamBx .member .details h2{
+        margin-left: 20px;
+    }
 }
-.teamBx .member .imgBx{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-.teamBx .member .imgBx img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-} */

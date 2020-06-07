@@ -96,7 +96,7 @@ function autorisation(){
         }
     }
     console.log(users);
-/*     myPage();*/
+    myPage();
 };
 
 document.getElementById('vvod_dannix_autorisation').addEventListener('click', autorisation);

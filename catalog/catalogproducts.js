@@ -1,8 +1,9 @@
 class CreateProduct{
+
     getProductItem(card){
         let element = document.createElement(card.nameTag);
-        if('nameclass' in card){
-            element.setAttribute('class', card.nameclass);
+        if('nameClass' in card){
+            element.setAttribute('class', card.nameClass);
         };
         if('contentText' in card){
             element.innerHTML = card.contentText;
@@ -15,7 +16,7 @@ class CreateProduct{
         }
         return element;
     };
-    
+
 }
 
-let createProduct = new CreateProduct('.value_product',allOurProducts);
+let createProduct = new CreateProduct('.catalog_counter', catalogProduct);

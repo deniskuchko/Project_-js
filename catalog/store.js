@@ -10,6 +10,7 @@ class Store{
         if(productsLcStorage !== null){
             products = JSON.parse(productsLcStorage);
         };
+
         return products;
     };
 
@@ -21,12 +22,13 @@ class Store{
         if(index === -1){
             products.push(id);
             statusProduct = true;
-        } else {
+        } else{
             products.splice(index, 1);
             statusProduct = false;
         }
 
         localStorage.setItem('Store', JSON.stringify(products));
+
         return {
             products: products,
             statusProduct: statusProduct

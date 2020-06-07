@@ -634,6 +634,43 @@ color: #fff;
     text-decoration: none;
     
 }
+
+#clockdiv{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    background: #f50fbc;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    left: 57%;
+}
+#clockdiv:hover{
+    background: #0fc3f5;
+    transition: 1s;
+    
+}
+
+#clockdiv p{
+margin: 0;
+color: #0fc3f5;
+}
+#clockdiv:hover p, #clockdiv:hover span{
+    margin: 0;
+    color: #f50fbc;
+    transition: 1s;
+}
+#clockdiv span{
+    margin: auto;
+    color: #0fc3f5;
+}
+.timer{
+    display: flex;
+}
+
 @media(max-width:992px){
     .toogle{
         display: block;
@@ -693,6 +730,19 @@ color: #fff;
     header ul li a{
         color: #000;
     }
+    header .faq{
+        position: absolute;
+        left: 60%;
+        top: 10%;
+        width: 150px;
+        font-size: 16px;
+    }
+    header .faq a{
+        margin: 0px;
+        font-size: 10px;
+        
+        
+    }
     .banner{
         background-position: center;
     }
@@ -721,8 +771,14 @@ color: #fff;
         font-size: 40px;
         padding-top: 20px;
     }
+    
 }
 @media(max-width:576px){
+    header .faq{
+        left: 31.5%;
+        top: 50px;
+        
+    }
     .banner h2{
         font-size: 46px;
         line-height: 2;

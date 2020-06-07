@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 h3{
     margin-top: 80px;
 }
@@ -24,7 +32,7 @@ h3{
     background-size: cover;
 }
 .close{
-    background: #000;
+    background: #fff;
     width: 40px;
     height: 40px;
     color: #fff;
@@ -46,7 +54,7 @@ h3{
 
 .searchContainer, .container_cart{
     display: none;
-    background: #0fc3f5;
+    background: #e8f5f8;
     border: 1px solid #556270;
     border-radius: 20px;
     position: absolute;
@@ -134,7 +142,62 @@ h3{
     background-color: #666;
     margin: 4px 0;
 }
+/* Добавить в корзину кнопка */
+.btn, .close{
+    background-color: none;
+    border: 1px solid #3498db;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #3498db;
+    transition: 1s;
+    font-family: 'Poppins';
+    position: relative;
+    overflow: hidden;
+    
+}
+.btn:hover, .close:hover{
+    color: #106efa;
+    transform: scale(1.1);
+}
+.btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #3498db;
+    z-index: 0;
+    transition: 1s;
+    top: 0;
+    opacity: 0.5;
+    border-radius: 0 0 50% 50%;
+}
+.btn:hover::before{
+height: 180%;    
+}
 
+.close::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #3498db;
+    z-index: 0;
+    transition: 1s;
+    top: 0;
+    opacity: 0.5;
+    border-radius: 0 0 50% 50%;
+}
+.close:hover::before{
+height: 180%;    
+}
+.close{
+    border: 1px solid #3498db;
+    width: 30px;   
+    height: 30px;
+    position: absolute;
+}
 @media(max-width:425px){
     /* #sidebar.active {
         left: 20px;

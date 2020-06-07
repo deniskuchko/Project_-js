@@ -24,12 +24,12 @@ let div =document.createElement('div');
 div.className = 'faq';
 div.insertAdjacentHTML('afterbegin', `
 <a href="./catalog.html">All products</a>
-<a href=">Men</a>
+<a href="./catalog.html#men">Men</a>
 <a href="./catalog.html#women">Women</a>
-<a href="#shoesmen">Shoes For Men</a>
-<a href="#shoeswomen">Shoes For Women</a>
-<a href="#bags">Bags</a>
-<a href="#accesories">Accesories</a>`);
+<a href="./catalog.html#shoesmen">Shoes For Men</a>
+<a href="./catalog.html#shoeswomen">Shoes For Women</a>
+<a href="./catalog.html#bags">Bags</a>
+<a href="./catalog.html#accesories">Accesories</a>`);
 function openFAQShow(){
     document.querySelector('#catalog_FAQ').append(div);
     document.querySelector('.faq').style.display = 'block';
@@ -42,3 +42,10 @@ document.querySelector('#catalog_FAQ').onmouseover = openFAQShow;
 document.querySelector('#catalog_FAQ').onmouseout  = openFAQNone;
 
 
+/* Перенаправление от sales к каталогу */
+
+
+function transferSales(){
+    location.href = './catalog.html';
+};
+document.querySelector('.item').addEventListener('click', transferSales);
